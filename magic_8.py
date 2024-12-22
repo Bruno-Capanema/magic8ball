@@ -1,44 +1,35 @@
-# Importamos o módulo random para trabalhar com números aleatórios.
+# Importa o módulo random para gerar números aleatórios
 import random
 
-# Exibimos uma mensagem inicial para orientar o usuário.
+# Exibe uma mensagem de boas-vindas
 print("Bem-vindo à Magic 8 Ball!")
 print("Faça uma pergunta e receba sua resposta. Digite 'sair' para encerrar o programa.\n")
 
-# Usamos um loop while para repetir o processo de perguntas e respostas.
-# Esse loop continuará até que o usuário digite 'sair'.
+# Inicia um loop que ficará perguntando até o usuário digitar 'sair'
 while True:
-    # Solicitamos ao usuário que faça uma pergunta.
-    question = input("Pergunta:      ")
-
-    # Se o usuário digitar 'sair', interrompemos o loop com break.
+    # Solicita uma pergunta ao usuário
+    question = input("Pergunta: ")
+    
+    # Se o usuário digitar 'sair', encerra o programa
     if question.lower() == "sair":
         print("Obrigado por usar a Magic 8 Ball! Até mais!")
         break
 
-    # Geramos um número aleatório entre 1 e 9.
+    # Gera um número aleatório de 1 a 9
     random_number = random.randint(1, 9)
 
-    # Usamos uma estrutura de decisão (if/elif/else) para definir
-    # a resposta com base no número gerado.
-    if random_number == 1:
-        answer = "Sim - definitivamente."
-    elif random_number == 2:
-        answer = "É decididamente assim."
-    elif random_number == 3:
-        answer = "Sem dúvida."
-    elif random_number == 4:
-        answer = "Resposta vaga, tente novamente."
-    elif random_number == 5:
-        answer = "Pergunte novamente mais tarde."
-    elif random_number == 6:
-        answer = "Melhor não te contar agora."
-    elif random_number == 7:
-        answer = "Minhas fontes dizem que não."
-    elif random_number == 8:
-        answer = "O futuro não é bom."
-    else:  # Caso o número seja 9
-        answer = "Muito duvidoso."
+    # Define a resposta com base no número gerado
+    respostas = {
+        1: "Sim - definitivamente.",
+        2: "É decididamente assim.",
+        3: "Sem dúvida.",
+        4: "Resposta vaga, tente novamente.",
+        5: "Pergunte novamente mais tarde.",
+        6: "Melhor não te contar agora.",
+        7: "Minhas fontes dizem que não.",
+        8: "O futuro não é bom.",
+        9: "Muito duvidoso."
+    }
 
-    # Exibimos a resposta da Magic 8 Ball.
-    print(f"Magic 8 Ball: {answer}\n")
+    # Exibe a resposta correspondente ao número gerado
+    print(f"Magic 8 Ball: {respostas[random_number]}\n")
